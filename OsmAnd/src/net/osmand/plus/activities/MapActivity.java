@@ -573,7 +573,7 @@ public class MapActivity extends AccessibleActivity implements
 			progressDlg.dismiss();
 			progressDlg = null;
 		}
-		if (!isFinishing() && (settings.SCREEN_POWER_SAVE.get() > 0)) {
+		if (!isFinishing() && (settings.WAKE_ON_VOICE.get() > 0)) {
 			VoiceRouter voiceRouter = app.getRoutingHelper().getVoiceRouter();
 			voiceRouter.addVoiceMessageListener(this);
 		}
@@ -794,7 +794,7 @@ public class MapActivity extends AccessibleActivity implements
 
 	@Override
 	public void onVoiceMessage() {
-		final Integer screenPowerSave = settings.SCREEN_POWER_SAVE.get();
+		final Integer screenPowerSave = settings.WAKE_ON_VOICE.get();
 		if (screenPowerSave > 0) {
 			uiHandler.removeCallbacks(releaseWakeLocksRunnable);
 
@@ -818,7 +818,7 @@ public class MapActivity extends AccessibleActivity implements
 		}
 		
 		if (mDevicePolicyManager != null && mDeviceAdmin != null) {
-			final Integer screenPowerSave = settings.SCREEN_POWER_SAVE.get();
+			final Integer screenPowerSave = settings.WAKE_ON_VOICE.get();
 			if (screenPowerSave > 0) {
 				if (mDevicePolicyManager.isAdminActive(mDeviceAdmin)) {
 					try {
