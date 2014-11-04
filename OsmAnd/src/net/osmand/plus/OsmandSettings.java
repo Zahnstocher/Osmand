@@ -929,6 +929,15 @@ public class OsmandSettings {
         KEEP_INFORMING.setModeDefaultValue(ApplicationMode.BICYCLE, 0);
         KEEP_INFORMING.setModeDefaultValue(ApplicationMode.PEDESTRIAN, 0);
 	}
+	
+	// screen power save
+	public final CommonPreference<Integer> SCREEN_POWER_SAVE = new IntPreference("wake_on_voice", 0).makeProfile();
+	{
+		// 0 means never
+		SCREEN_POWER_SAVE.setModeDefaultValue(ApplicationMode.CAR, 0);
+		SCREEN_POWER_SAVE.setModeDefaultValue(ApplicationMode.BICYCLE, 0);
+		SCREEN_POWER_SAVE.setModeDefaultValue(ApplicationMode.PEDESTRIAN, 0);
+	}
 
 	// this value string is synchronized with settings_pref.xml preference name
 	// try without AUTO_FOLLOW_ROUTE_NAV (see forum discussion 'Simplify our navigation preference menu')
@@ -987,9 +996,6 @@ public class OsmandSettings {
 	
 	
 	public CommonPreference<String> PREVIOUS_INSTALLED_VERSION = new StringPreference("previous_installed_version", "").makeGlobal();
-
-	public CommonPreference<Boolean> WAKE_ON_VOICE = new BooleanPreference("wake_on_voice", true).makeGlobal();
-
 
 	public ITileSource getMapTileSource(boolean warnWhenSelected) {
 		String tileName = MAP_TILE_SOURCES.get();
