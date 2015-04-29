@@ -940,12 +940,12 @@ public class OsmandSettings {
 		new IntPreference("map_screen_orientation", -1/*ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED*/).makeGlobal();
 	
 	// this value string is synchronized with settings_pref.xml preference name
-//	public final CommonPreference<Boolean> SHOW_VIEW_ANGLE = new BooleanPreference("show_view_angle", false).makeProfile().cache();
-//	{
-//		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.CAR, false);
-//		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.BICYCLE, true);
-//		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.PEDESTRIAN, true);
-//	}
+	public final CommonPreference<Boolean> SHOW_VIEW_ANGLE = new BooleanPreference("show_view_angle", false).makeProfile().cache();
+	{
+		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.CAR, false);
+		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.BICYCLE, true);
+		SHOW_VIEW_ANGLE.setModeDefaultValue(ApplicationMode.PEDESTRIAN, true);
+	}
 	
 	// this value string is synchronized with settings_pref.xml preference name
 	// seconds to auto_follow 

@@ -209,6 +209,7 @@ public class MapWidgetRegistry {
 	private void resetDefaultAppearance(ApplicationMode appMode) {
 //		settings.SHOW_RULER.resetToDefault();		
 		settings.SHOW_DESTINATION_ARROW.resetToDefault();
+		settings.SHOW_VIEW_ANGLE.resetToDefault();
 		settings.TRANSPARENT_MAP_THEME.resetToDefault();
 		settings.SHOW_STREET_NAME.resetToDefault();
 		settings.CENTER_POSITION_ON_MAP.resetToDefault();
@@ -217,6 +218,7 @@ public class MapWidgetRegistry {
 	public void addControlsAppearance(final MapInfoLayer mil, ContextMenuAdapter cm, ApplicationMode mode) {
 //		addControlId(mil, cm, R.string.map_widget_show_ruler, settings.SHOW_RULER);
 		addControlId(mil, cm, R.string.map_widget_show_destination_arrow, settings.SHOW_DESTINATION_ARROW);
+		addControlId(mil, cm, R.string.show_view_angle, settings.SHOW_VIEW_ANGLE);
 		addControlId(mil, cm, R.string.map_widget_transparent, settings.TRANSPARENT_MAP_THEME);
 		addControlId(mil, cm, R.string.always_center_position_on_map, settings.CENTER_POSITION_ON_MAP);
 		if(mode != ApplicationMode.DEFAULT) {
